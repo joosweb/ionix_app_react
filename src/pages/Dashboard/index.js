@@ -51,7 +51,7 @@ export default class Dashboard extends Component {
     componentDidMount() {
 
         const token = localStorage.getItem('token');
-        fetch('http://localhost:3333/clients', { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
+        fetch('https://adonis-ionix-test.herokuapp.com/clients', { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
         .then(response => {
             if(response.ok) {
                 return response.json();
