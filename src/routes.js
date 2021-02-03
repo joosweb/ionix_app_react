@@ -6,7 +6,6 @@ import PrivateRoute from './auth';
 import Login from './pages/Login';
 import Clients from './pages/Dashboard';
 import Logout from './pages/Logout';
-import UserProfile from './pages/UserProfile';
 
 const Routes = () => (
     <Router>
@@ -14,7 +13,6 @@ const Routes = () => (
             <Route exact path="/" component={Login} />
             <PrivateRoute path="/clients" component={Clients} />
             <Route exact path="/logout" component={Logout} />
-            <PrivateRoute patch="/clients/:id" component={UserProfile} />
         </Switch>
     </Router>
 );
