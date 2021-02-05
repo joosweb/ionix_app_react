@@ -22,7 +22,9 @@ export default class Login extends Component {
             }),
         };
 
-        fetch('https://adonis-ionix-test.herokuapp.com/login', requestInfo)
+        const baseURL = process.env.REACT_APP_API
+
+        fetch(baseURL + '/login', requestInfo)
         .then(response => {
             if(response.ok) {
                 return response.json()

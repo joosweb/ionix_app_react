@@ -23,7 +23,8 @@ export default class Dashboard extends Component {
 
     detallesUsuario(user_id) {
         const token = localStorage.getItem('token');
-        fetch('https://adonis-ionix-test.herokuapp.com/clients/'+ user_id, { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
+        const baseURL = process.env.REACT_APP_API
+        fetch(baseURL + '/clients/'+ user_id, { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
         .then(response => {
             if(response.ok) {
                 return response.json();
@@ -51,7 +52,8 @@ export default class Dashboard extends Component {
     componentDidMount() {
 
         const token = localStorage.getItem('token');
-        fetch('https://adonis-ionix-test.herokuapp.com/clients', { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
+        const baseURL = process.env.REACT_APP_API
+        fetch(baseURL + '/clients', { headers: new Headers({ 'Authorization': `Bearer ${token}` })})
         .then(response => {
             if(response.ok) {
                 return response.json();
